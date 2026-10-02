@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="fox-home-jeongsan-claude가 가계부 정산 자료와 Google 계정 정보를 처리하는 방법을 설명합니다.">
+  <title>개인정보처리방침 · fox-home-jeongsan-claude</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="fox-home-jeongsan-claude 홈">fox-home-jeongsan-claude</a>
+      <a class="header-link" href="index.html">홈으로 · Home</a>
+    </header>
+
+    <article class="policy">
+      <p class="eyebrow">PRIVACY · 개인정보</p>
+      <h1>개인정보처리방침</h1>
+      <p class="policy-intro">fox-home-jeongsan-claude는 개인·가족 가계부 정산을 위한 도구입니다. 이 방침은 앱이 Google 계정과 결제 자료를 처리하는 방법을 설명합니다.</p>
+      <p class="updated">시행일 · Effective date: 2026-10-03</p>
+
+      <section>
+        <h2>1. 처리하는 정보</h2>
+        <ul>
+          <li><strong>Gmail:</strong> 사용자가 승인한 읽기 전용 권한으로 카드·은행 등 정산 관련 메일을 검색하고, 해당 메일의 첨부파일과 분류에 필요한 메일 정보를 읽습니다. Gmail 메일 자체를 수정하거나 삭제하지 않습니다. Apps Script는 별도로 설정된 경우 소유자에게 장애·상태 알림 메일을 보낼 수 있습니다.</li>
+          <li><strong>Google Drive:</strong> 사용자가 지정한 폴더의 파일 목록과 정산 자료를 읽습니다. 기본 동기화에서 성공적으로 처리한 원본 파일은 Drive의 처리완료 폴더로 이동할 수 있습니다. 실패 자료는 재검토를 위해 별도 폴더에 남길 수 있습니다.</li>
+          <li><strong>Google Sheets:</strong> 날짜, 항목, 금액, 카드 구분, 출처 등 파싱된 정산 후보를 검토대기 탭에 기록합니다. 사용자가 확인·승인한 항목은 가계부 원장과 완료보관 탭에 반영될 수 있습니다.</li>
+          <li><strong>Tasker 알림:</strong> 사용자가 설정한 Android 자동화가 결제 알림 내용을 인증된 Apps Script 웹앱으로 전송할 수 있습니다. 앱은 이를 정산 후보로 만들어 검토대기에 기록합니다. 전송에 실패하거나 형식을 판별하지 못한 알림은 재처리용으로 휴대전화에도 남을 수 있습니다.</li>
+          <li><strong>로컬 처리 정보:</strong> Gmail 첨부 원본과 출처 정보는 앱이 실행되는 PC의 로컬 보관 폴더에 보존됩니다. 원본 파일은 앱이 별도 암호화하지 않으며, 수집 처리 이력과 오류 상태도 PC에 저장됩니다. 기본 설정의 Windows 로컬 수집기는 사용자 Google OAuth 토큰을 DPAPI로 보호해 저장합니다. PC와 파일에 대한 접근은 사용자가 관리합니다.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. 이용 목적과 처리 위치</h2>
+        <p>정보는 정산 자료 수집, 파일 형식 판별, 거래 후보 추출, 중복 확인, 검토대기 작성, 승인된 항목의 원장 반영, 장애 알림에 사용됩니다. 기본 수집·파싱은 사용자의 PC에서 이루어지며, Google API와 Apps Script를 통해 필요한 자료가 사용자의 Google Drive·Sheets 및 해당 Google 계정 안에서 처리됩니다.</p>
+        <p>선택적으로 Discord 웹훅을 설정하면 수집 실패 알림이 Discord로 전송될 수 있습니다. 알림에는 채널 또는 파일 이름과 오류 요약이 포함될 수 있습니다. Discord를 설정하지 않으면 이 경로는 사용되지 않습니다. PC의 Windows 알림도 사용할 수 있습니다.</p>
+        <p>이 정적 안내 페이지는 입력 양식, 분석 도구, 광고 스크립트, 추적 쿠키를 사용하지 않습니다.</p>
+      </section>
+
+      <section>
+        <h2>3. 보관과 삭제</h2>
+        <p>앱은 별도의 중앙 거래 데이터베이스를 운영하지 않습니다. 거래 후보와 승인 기록은 사용자의 Google Sheets에 남고, 수집된 Gmail 첨부 사본·처리 상태는 사용자 PC에 남을 수 있습니다. Tasker의 재처리 알림은 휴대전화에 남을 수 있습니다. 앱은 정해진 기간이 지나면 이를 자동 삭제하지 않습니다. Drive 원본의 폴더 이동은 삭제가 아닙니다.</p>
+        <p>사용자는 Google Sheets의 관련 행, Drive의 처리 폴더, PC와 휴대전화에 보관된 앱 자료를 직접 확인하고 삭제할 수 있습니다. 수집을 중단하려면 PC와 Tasker의 자동화를 중지하고 Google 계정 설정에서 앱 접근 권한을 철회합니다. 별도 계정에 부여한 파일 접근은 Drive·Sheets의 공유 설정에서도 해제해야 합니다. 이미 Sheets·Drive·PC·휴대전화에 저장된 사본은 별도로 삭제해야 합니다. Gmail 원본은 사용자가 직접 관리합니다.</p>
+      </section>
+
+      <section>
+        <h2>4. 제3자 서비스와 권한</h2>
+        <p>앱은 사용자가 선택한 Google 계정 권한 범위에서 Gmail, Drive, Sheets, Apps Script를 이용합니다. Drive·Sheets 수집에는 운영자가 별도로 구성한 서비스 계정이 사용될 수 있으며, 이 계정은 파일 공유 권한에 따라 정산 자료에 접근합니다. Google 서비스의 데이터 처리는 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>의 적용을 받습니다. Discord 웹훅 알림은 사용자가 별도로 설정한 경우에만 사용됩니다.</p>
+        <p>Google 계정의 앱 권한은 <a href="https://myaccount.google.com/connections">Google 계정의 서드 파티 연결 관리</a>에서 확인하거나 철회할 수 있습니다. 권한을 철회해도 이미 생성된 정산 자료는 자동으로 지워지지 않습니다.</p>
+      </section>
+
+      <section>
+        <h2>5. 문의</h2>
+        <p>개인정보 또는 앱 처리에 관한 문의는 Google OAuth 동의 화면에 등록된 지원 이메일로 연락해 주세요.</p>
+      </section>
+
+      <p class="policy-back"><a href="index.html">← fox-home-jeongsan-claude 홈</a></p>
+    </article>
+
+    <footer class="site-footer">
+      <span>fox-home-jeongsan-claude</span>
+      <a href="index.html">Home · 홈</a>
+    </footer>
+  </main>
+</body>
+</html>
